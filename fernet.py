@@ -73,11 +73,20 @@ def RegenerateKey():
     x = input("Click Enter to continue...")
     clear()
     ConsoleInterface()
+def ChangeKey():
+    clear()
+    x = input("Enter key\n: ")
+    with open("key","wb") as file:
+        file.write(x.encode())
+    print("Done!")
+    x = input("Click Enter to continue...")
+    clear()
+    ConsoleInterface()
 #console interface
 def ConsoleInterface():
     global textAlert
     print("Welcome to this program. This program is going to encrypt or decrypt your text!")
-    print("1.Encrypt \n2.Decrypt \n3.Check local key\n4.Regenerate key\n5.Exit\n")
+    print("1.Encrypt \n2.Decrypt \n3.Check local key\n4.Regenerate key\n5.Change key\n6.Exit\n")
     UserChoice = input(textAlert+"\n: ")
     textAlert="Enter number to continue"
     if UserChoice=="1":
@@ -89,6 +98,8 @@ def ConsoleInterface():
     elif UserChoice=="4":
         RegenerateKey()
     elif UserChoice=="5":
+        ChangeKey()
+    elif UserChoice=="6":
         clear()
         exit()
     else:
