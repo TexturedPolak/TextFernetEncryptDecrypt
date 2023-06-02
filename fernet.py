@@ -1,6 +1,5 @@
 from cryptography.fernet import Fernet
 import os
-import pyperclip
 def clear():
     if(os.name == 'posix'):
         os.system('clear')
